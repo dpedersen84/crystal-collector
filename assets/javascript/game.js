@@ -1,6 +1,7 @@
-$(document).ready(function() { //START
+$(document).ready(function() { //START JQUERY
 
-    //VARIABLES
+    //GLOBAL VARIABLES
+
     let goalNumber;
     let yourNumber;
     let wins;
@@ -10,7 +11,7 @@ $(document).ready(function() { //START
     let crystal3;
     let crystal4;
 
-    //RESET FUNCTION
+    //newGame(RESET) FUNCTION
 
     function newGame () {
         let goalNumber;
@@ -22,8 +23,17 @@ $(document).ready(function() { //START
         let crystal3;
         let crystal4;
 
-        $("#goalNumber, #yourNumber, #wins, #losses, #crystal1, #crystal2, #crystal3, #crystal4").empty();
-    }
+        $("#goalNumber, #yourNumber, #wins, #losses, #crystal1, #crystal2, #crystal3, #crystal4").empty(); //Clear Variables on DOM for New Game
+
+    } //END FUNCTION
+
     //CLICK LISTENER
 
-}); //END
+    $(".crystal").on("click", function () {
+        
+        //IF ELSE
+
+    }) //END CLICK LISTENER
+
+
+}); //END JQUERY
