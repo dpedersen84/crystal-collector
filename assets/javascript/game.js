@@ -23,9 +23,23 @@ $(document).ready(function() { //START JQUERY
         let crystal3;
         let crystal4;
 
-        $("#goalNumber, #yourNumber, #wins, #losses, #crystal1, #crystal2, #crystal3, #crystal4").empty(); //Clear Variables on DOM for New Game
+        crystal1 = Math.floor((Math.random() * 19) + 1);
+        console.log("Crystal 1: " + crystal1);
+
+        crystal2 = Math.floor((Math.random() * 19) + 1);
+        console.log("Crystal 1: " + crystal2);
+
+        crystal3 = Math.floor((Math.random() * 19) + 1);
+        console.log("Crystal 1: " + crystal3);
+
+        crystal4 = Math.floor((Math.random() * 19) + 1);
+        console.log("Crystal 1: " + crystal4);
+
+        // $("#goalNumber, #yourNumber, #wins, #losses, #crystal1, #crystal2, #crystal3, #crystal4").empty(); //Clear Variables on DOM for New Game
 
     } //END FUNCTION
+
+    newGame() ;
 
     //CLICK LISTENER
 

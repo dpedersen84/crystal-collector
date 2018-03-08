@@ -1,3 +1,7 @@
+.body {
+    background-color: orange;
+}
+
 #goalNumber, #yourNumber, .record {
     border-style: solid;
     border-color: red;
