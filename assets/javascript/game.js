@@ -46,7 +46,7 @@ $(document).ready(function() { //START JQUERY
     newGame() ;
 
     //CLICK LISTENER
-    
+
     //Crystal One
     $(".crystal1").on("click", function () {
         yourNumber += crystal1;
@@ -75,5 +75,12 @@ $(document).ready(function() { //START JQUERY
         $("#yourNumber").text(yourNumber);
     });
 
+    if (yourNumber === goalNumber) {
+        alert("WINNER!");
+    }
 
+    else if (yourNumber >= goalNumber) {
+        alert("LOSER!");
+    }
+    
 }); //END JQUERY
