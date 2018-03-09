@@ -1,6 +1,3 @@
-.crystals {
-    background-color: orange;
-}
 
 #goalNumber, #yourNumber, .record {
     border-style: solid;
@@ -15,4 +12,13 @@
     position: absolute;
     margin-top: -200px;
     margin-left: 305px;
+}
+
+#goalNumber, #yourNumber {
+    font-size: 100px;
+    text-align: center;
+}
+
+.record {
+    font-size: 40px;
 }
