@@ -1,9 +1,5 @@
-$(document).ready(function() { //START JQUERY
+$(document).ready(function() { 
 
-    //GLOBAL VARIABLES
-
-    
-    
     var wins=0;
     $("#wins").text("Wins: " + wins);
     var losses = 0;
@@ -14,9 +10,10 @@ $(document).ready(function() { //START JQUERY
     // let crystal4;
     var yourNumber = 0;
     $("#yourNumber").text(yourNumber);
-    //newGame(RESET) FUNCTION
 
-    // function newGame () {
+    // newGame(RESET) FUNCTION
+
+    function newGame () {
     //     let goalNumber;
     //     let yourNumber=0;
     //     let wins;
@@ -37,13 +34,8 @@ $(document).ready(function() { //START JQUERY
 
     //     // crystal4 = Math.floor((Math.random() * 12) + 1);
     //     // console.log("Crystal 1: " + crystal4);
+    }
 
-    //     
-
-
-    // } //END FUNCTION
-
-    // newGame() ;
     goalNumber = Math.floor((Math.random() * 120) + 19);
         console.log("Goal Number: " + goalNumber);
         $("#goalNumber").text(goalNumber);
@@ -69,13 +61,15 @@ $(document).ready(function() { //START JQUERY
         if (yourNumber === goalNumber) {
             alert("WINNER!");
             wins++
+            newGame ();
         }
     
         else if (yourNumber >= goalNumber) {
             alert("LOSER!");
             losses++
+            newGame ();
         }
-        
+
     });
 
     // //Crystal One
