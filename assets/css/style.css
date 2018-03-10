@@ -1,19 +1,4 @@
 
-/* #goalNumber, #yourNumber, .record {
-    border-style: solid;
-    border-color: red;
-    border-width: 5px;
-    height: 200px;
-    width: 300px;
-}
-
-.record {
-    border-color: blue;
-    position: absolute;
-    margin-top: -200px;
-    margin-left: 305px;
-} */
-
 #goalNumber, #yourNumber {
     font-size: 100px;
     text-align: center;
@@ -27,4 +12,11 @@
 
 .crystals {
     text-align: center;
+}
+
+.footer { 
+    background-color: #2f2f2f;
+    height: 60px;
+    padding-top: 20px;
+    color: #ffffff;
 }
