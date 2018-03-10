@@ -57,16 +57,19 @@ $(document).ready(function() {
         console.log("Crystal Value: " + crystalArray [thisData]);
         crystalArray[thisData] = parseInt(crystalArray[thisData]);
         yourNumber += crystalArray[thisData];
+        alert(yourNumber);
 
         if (yourNumber === goalNumber) {
             alert("WINNER!");
             wins++
+            alert("Wins:" + wins);
             newGame ();
         }
     
         else if (yourNumber >= goalNumber) {
             alert("LOSER!");
             losses++
+            alert("Losses:" + losses);
             newGame ();
         }
 
