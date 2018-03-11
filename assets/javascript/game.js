@@ -12,6 +12,8 @@ $(document).ready(function() {
     // newGame(RESET) FUNCTION
     function newGame () {
 
+        $("#yourNumber", ).empty();
+
         var yourNumber = 0;
         $("#yourNumber").text(yourNumber);
 
@@ -19,7 +21,8 @@ $(document).ready(function() {
         goalNumber = Math.floor((Math.random() * 120) + 19);
             console.log("Goal Number: " + goalNumber);
             $("#goalNumber").text(goalNumber);
-    
+        
+        //Crystals
         var crystalArray = [];
 
         for (var i = 0; i < 4; i++) {
@@ -28,8 +31,8 @@ $(document).ready(function() {
         };
 
         console.log("Crystal Array: " + crystalArray);
+        console.log("Your Number: " + yourNumber);
 
-        $("#yourNumber").empty();
     };
 
     //Goal Number is Set
@@ -37,6 +40,7 @@ $(document).ready(function() {
         console.log("Goal Number: " + goalNumber);
         $("#goalNumber").text(goalNumber);
     
+    //Crystals
     var crystalArray = [];
 
     for (var i = 0; i < 4; i++) {
@@ -49,7 +53,6 @@ $(document).ready(function() {
     //CLICK LISTENER
     $(".crystal").on("click", function () {
         var thisData = ($(this).attr("data-value"));
-        // console.log("Crystal Value Array Location: " + thisData);
         console.log("Crystal Value: " + crystalArray [thisData]);
         crystalArray[thisData] = parseInt(crystalArray[thisData]);
         yourNumber += crystalArray[thisData];
@@ -58,7 +61,7 @@ $(document).ready(function() {
 
         if (yourNumber === goalNumber) {
             alert("WINNER!");
-            wins++
+            wins++;
             console.log("Wins:" + wins);
             $("#wins").text("Wins: " + wins);
             console.log("---------------------");
@@ -67,7 +70,7 @@ $(document).ready(function() {
     
         else if (yourNumber >= goalNumber) {
             alert("LOSER!");
-            losses++
+            losses++;
             console.log("Losses:" + losses);
             $("#losses").text("Losses: " + losses);
             console.log("---------------------");
