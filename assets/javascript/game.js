@@ -1,69 +1,65 @@
 $(document).ready(function() { 
-
     var wins=0;
-    $("#wins").text("Wins: " + wins);
-
     var losses = 0;
-    $("#losses").text("Losses: " + losses);
-
     var yourNumber = 0;
-    $("#yourNumber").text(yourNumber);
-
-    // newGame(RESET) FUNCTION
-    function newGame () {
-
-        $("#yourNumber", ).empty();
-
-        var yourNumber = 0;
+    var goalNumber = 0;
+    var crystalArray = [];
+    
+    function newYourNumber () {
         $("#yourNumber").text(yourNumber);
+        console.log("Your Number: " + yourNumber);
+    };
 
+    function newGoalNumber () {
         //Goal Number is Set
         goalNumber = Math.floor((Math.random() * 120) + 19);
-            console.log("Goal Number: " + goalNumber);
             $("#goalNumber").text(goalNumber);
-        
-        //Crystals
-        var crystalArray = [];
+            console.log("Goal Number: " + goalNumber);
+    };
 
+    function newCrystals () {
         for (var i = 0; i < 4; i++) {
             var randCrystal = Math.floor(Math.random() * 12) + 1;
             crystalArray.push(randCrystal);
-        };
-
+        }
+        randCrystal = parseInt(randCrystal);
         console.log("Crystal Array: " + crystalArray);
-        console.log("Your Number: " + yourNumber);
-
     };
-
-    //Goal Number is Set
-    goalNumber = Math.floor((Math.random() * 120) + 19);
-        console.log("Goal Number: " + goalNumber);
-        $("#goalNumber").text(goalNumber);
     
-    //Crystals
-    var crystalArray = [];
+    // newGame(RESET) FUNCTION
+    function newGame () {
+        var yourNumber = 0;
+        var crystalArray = [];
+        var goalNumber = 0;
 
-    for (var i = 0; i < 4; i++) {
-        var randCrystal = Math.floor(Math.random() * 12) + 1;
-        crystalArray.push(randCrystal);
+        newYourNumber();
+        newGoalNumber();
+        newCrystals();
     };
 
-    console.log("Crystal Array: " + crystalArray);
+    newYourNumber();
+    newGoalNumber();
+    newCrystals();
 
     //CLICK LISTENER
     $(".crystal").on("click", function () {
-        var thisData = ($(this).attr("data-value"));
-        console.log("Crystal Value: " + crystalArray [thisData]);
-        crystalArray[thisData] = parseInt(crystalArray[thisData]);
-        yourNumber += crystalArray[thisData];
+        var crystalValue = ($(this).attr("data-value"));
+
+        //Converts String to Number
+        crystalArray[crystalValue] = parseInt(crystalArray[crystalValue]);
+         
+        yourNumber += crystalArray[crystalValue];
         $("#yourNumber").text(yourNumber);
-        console.log("Your number: " + yourNumber);
+        console.log("Crystal Value: " + crystalArray [crystalValue]);
+        console.log("Your Number: " + yourNumber);
 
         if (yourNumber === goalNumber) {
             alert("WINNER!");
             wins++;
-            console.log("Wins:" + wins);
             $("#wins").text("Wins: " + wins);
+            $("#losses").text("Losses: " + losses);
+            console.log("Wins:" + wins);
+            console.log("Losses:" + losses);
             console.log("---------------------");
             newGame ();
         }
@@ -71,8 +67,10 @@ $(document).ready(function() {
         else if (yourNumber >= goalNumber) {
             alert("LOSER!");
             losses++;
-            console.log("Losses:" + losses);
+            $("#wins").text("Wins: " + wins);
             $("#losses").text("Losses: " + losses);
+            console.log("Wins:" + wins);
+            console.log("Losses:" + losses);
             console.log("---------------------");
             newGame ();
         }
