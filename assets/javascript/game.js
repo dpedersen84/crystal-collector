@@ -28,9 +28,9 @@ $(document).ready(function() {
     
     // newGame(RESET) FUNCTION
     function newGame () {
-        var yourNumber = 0;
-        var crystalArray = [];
-        var goalNumber = 0;
+        yourNumber = 0;
+        crystalArray = [];
+        goalNumber = 0;
 
         newYourNumber();
         newGoalNumber();
